@@ -12,7 +12,7 @@
 
 ## DAY3
 
-[作业文档](./day3/day3_homework.txt)
+[作业文档](./day3/day3_homework.txt)  
 [提交答案](./day3/readme.md)
 
 ## DAY4
@@ -32,4 +32,4 @@
 ## DAY7
 
 [作业文档](./day7/day7_homework.txt)  
-[提交答案](./day7/readme.md)
+[提交答案](./day7/README.md)

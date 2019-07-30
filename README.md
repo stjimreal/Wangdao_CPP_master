@@ -31,5 +31,5 @@
 
 ## DAY7
 
-[作业文档](./day7/day7_homework.txt)  
-[提交答案](./day7/README.md)
+[作业文档](https://github.com/stjimreal/CPP_DAY7/blob/3a07cd330bfc97ef38d42a92a4391f8360acf760/day7_homework.txt)  
+[提交答案](https://github.com/stjimreal/CPP_DAY7/blob/3a07cd330bfc97ef38d42a92a4391f8360acf760/README.md)

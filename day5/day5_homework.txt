@@ -1,0 +1,40 @@
+
+
+1. 熟悉log4cpp的用法，动手敲代码
+    
+    http://blog.csdn.net/liuhong135541/article/category/1496383
+
+2. 封装log4cpp,使用起来比较方便，如下所示。
+
+	　输出的日志信息能同时输出到终端和文件
+
+		int main(void)
+		{
+			cout << "hello,world"<<endl;
+			
+			LogInfo("Message");	//或者   
+			LogError("Message");
+			LogWarn("Message");
+			LogDebug("Message");
+		}
+	
+	加分项：输出的日志信息中最好能有文件的名字，函数的名字及其所在的行号
+				//使用单例模式
+				class Mylogger
+				{
+				public:
+					void warn(const char * msg);
+					void error(const char * msg);
+					void debug(const char * msg);
+					void info(const char * msg);
+					
+				private:
+					Mylog();
+					~Mylog();
+				private:
+				  //......
+				};
+				
+				Mylogger * log = Mylogger::getInstance();
+				log->warn("hello");
+				

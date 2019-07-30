@@ -1,0 +1,50 @@
+
+[C++语法规则很多，要落实下来，得通过多敲代码来理解，
+ 看N遍不如写一次；在写代码的过程中，会碰到其它你不曾碰到过的
+ 编译问题，切记程序是调试出来的；再就是通过练习，把敲代码的
+ 速度提升上来，熟悉键盘，培养写代码的感觉]
+
+1. C++内存布局分为几个区域，各自具备什么特点？
+
+2. 当定义类时，编译器会为类自动生成哪些函数？
+   这些函数各自都有什么特点？
+   
+3. 什么是浅拷贝, 什么是深拷贝?
+
+4. 实现一个自定义的String类，保证main函数对正确执行
+class String
+{
+public:
+	String();
+	String(const char *pstr);
+	String(const String & rhs);
+	String & operator=(const String & rhs);
+	~String();
+
+	void print();
+
+private:
+	char * _pstr;
+};
+
+int main(void)
+{
+	String str1;
+	str1.print();
+	
+	String str2 = "Hello,world";
+	String str3("wangdao");
+	
+	str2.print();		
+	str3.print();	
+	
+	String str4 = str3;
+	str4.print();
+	
+	str4 = str2;
+	str4.print();
+	
+	return 0;
+}
+
+5. 当天代码实现一遍, 多测试

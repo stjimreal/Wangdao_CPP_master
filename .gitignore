@@ -1,6 +1,9 @@
 *.o
+*.i
+*.s
 *.log
 *.log.*
 /bin
 *刘立京.*
-
+.gitignore
+/.git

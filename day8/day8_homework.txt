@@ -1,0 +1,9 @@
+
+
+0. 实现PIMPL设计模式模式
+   	
+1. 实现单例模式的自动释放（3种方式）
+
+2. 实现基本的COW的CowString
+
+3. 实现CowString, 让其operator[]能够区分出读写操作

@@ -1,8 +1,8 @@
 SRCS:=$(wildcard ./src/*.cc)
 OBJS := ${patsubst ./src/%.cc, ./bin/%.o, $(SRCS)}
-ELFS:= log4cpp
+ELFS:= pimpl
 CFLAGS:= -Wall
-CXX:= g++-9
+CXX:= g++
 $(ELFS):$(OBJS)
 	$(CXX) $(CFLAGS) $^ -o $@ -llog4cpp -lpthread
 ./bin/%.o:./src/%.cc

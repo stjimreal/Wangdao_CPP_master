@@ -4,7 +4,7 @@ ELFS:= log4cpp
 CFLAGS:= -Wall
 CXX:= g++-9
 $(ELFS):$(OBJS)
-	$(CXX) $(CFLAGS) $^ -o $@ -llog4cpp -lpthread
+	$(CXX) $(CFLAGS) $^ -o $@ 
 ./bin/%.o:./src/%.cc
 	$(CXX) $(CFLAGS) -c $< -o $@
 

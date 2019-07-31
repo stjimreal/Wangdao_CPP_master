@@ -33,3 +33,8 @@
 
 [作业文档](https://github.com/stjimreal/CPP_DAY7/blob/3a07cd330bfc97ef38d42a92a4391f8360acf760/day7_homework.txt)  
 [提交答案](https://github.com/stjimreal/CPP_DAY7/blob/3a07cd330bfc97ef38d42a92a4391f8360acf760/README.md)
+
+## DAY8
+
+[作业文档](./day8/day8_homework.txt)  
+[提交答案](./day8/readme.md)

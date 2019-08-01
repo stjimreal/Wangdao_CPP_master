@@ -1,6 +1,6 @@
 SRCS:=$(wildcard ./src/*.cc)
 OBJS := ${patsubst ./src/%.cc, ./bin/%.o, $(SRCS)}
-ELFS:= log4cpp
+ELFS:= fbstr
 CFLAGS:= -Wall
 CXX:= g++-9
 $(ELFS):$(OBJS)

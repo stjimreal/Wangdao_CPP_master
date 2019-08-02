@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
 
-struct Cat;
-struct Dog;
 class Animal
 {
     public:
     static int number;
-	static bool isCat;
     Animal(){++number;}
-    ~Animal();
+    virtual ~Animal();
 };
 
 struct Dog: public Animal
@@ -24,18 +21,15 @@ struct Cat: public Animal
 {
     public:
     static int number;
-    Cat(){++number; Animal::isCat = true;}
+    Cat(){++number;}
     ~Cat(){--number;}
 };
 
 Animal::~Animal()
 {
 	--number;
-	if(isCat)
-		--Cat::number;
 }
 
-bool Animal::isCat = false;
 int Animal::number = 0;
 int Dog::number = 0;
 int Cat::number = 0;

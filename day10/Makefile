@@ -1,12 +1,11 @@
 SRCS:=$(wildcard ./src/*.cc)
 OBJS := ${patsubst ./src/%.cc, ./bin/%.o, $(SRCS)}
-ELFS:= Polymorphism
+ELFS:= ${patsubst ./src/%.cc, %, $(SRCS)}
 CFLAGS:= -Wall
 CXX:= g++
-$(ELFS):$(OBJS)
-	$(CXX) $(CFLAGS) $^ -o $@ -llog4cpp -lpthread
-./bin/%.o:./src/%.cc
-	$(CXX) $(CFLAGS) -c $< -o $@
+all:$(ELFS)
+%:./src/%.cc
+	$(CXX) $(CFLAGS) $< -o $@ 
 
 .PHONY: clean
 clean:

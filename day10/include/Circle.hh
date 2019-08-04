@@ -1,9 +1,16 @@
+#ifndef __UNIV_HEAD_HH
+#define __UNIV_HEAD_HH
 #include <iostream>
 
-#define PI 3.141592654
 using std::endl;
 using std::cin;
 using std::cout;
+#endif
+
+#ifndef __CIRCLE_HH
+#define __CIRCLE_HH
+
+#define PI 3.141592654
 
 class Circle
 {
@@ -32,12 +39,4 @@ public:
 private:
     double _radius;
 };
-
-int main()
-{
-    Circle x;
-    x = 4;
-    x.show();
-    cout<<endl;
-    return 0;
-}
+#endif

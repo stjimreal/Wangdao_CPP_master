@@ -1,6 +1,15 @@
 #include <cstring>
 #include "../include/singleton.hh"
 
+Singleton1st::autoRelease::~autoRelease()
+{
+    std::cout<<__FUNCTION__<<std::endl;
+    if (Singleton1st::_restore == nullptr)
+        return;
+    delete _restore;
+    std::cout<<"auto released OK"<<std::endl;
+}
+
 /* first implementation of autorelease */
 Singleton1st::Singleton1st()
 :_exam("")

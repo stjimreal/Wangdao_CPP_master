@@ -9,15 +9,9 @@ class Singleton1st
     class autoRelease
     {
     public:
-        ~autoRelease()
-        {
-            std::cout<<__FUNCTION__<<std::endl;
-            if (Singleton1st::_restore == nullptr)
-                return;
-            delete _restore;
-            std::cout<<"auto released OK"<<std::endl;
-        }
+        ~autoRelease();
     };
+
 public:
     static Singleton1st* genObj();
 

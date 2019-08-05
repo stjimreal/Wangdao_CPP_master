@@ -6,7 +6,7 @@ template <class T> class vector
     T* _fin;
     T* _end_of_storage;
 public:
-    vector(){_beg = _fin = _end_of_storage = nullptr;}
+    vector();
     vector(const size_t n, const T &value)
     : _beg(new T[n])
     {
@@ -58,3 +58,5 @@ public:
         return out;
     }
 };
+
+template <class T> vector<T>::vector() {_beg = _fin = _end_of_storage = nullptr;}

@@ -1,6 +1,6 @@
 SRCS:=$(wildcard ./src/*.cc)
 OBJS := ${patsubst ./src/%.cc, ./bin/%.o, $(SRCS)}
-ELFS:= queue
+ELFS:= singleton
 CFLAGS:= -std=c++17 -Wall
 CXX:= g++
 

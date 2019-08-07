@@ -9,7 +9,7 @@ using std::list;
 class LRUCache {
 public:
     LRUCache(int capacity) 
-    :_size(capacity)
+    :_size(capacity), _cur(0)
     {}
     int get(int key) {
         auto it = _dict.find(key);
@@ -26,14 +26,14 @@ public:
         auto it = _dict.find(key);
         if(it != _dict.end())
         {
-            _list.erase(it->second);
+            _list.erase(it->second);--_cur;
         }
-        _list.push_front(std::make_pair(key, value));
+        _list.push_front(std::make_pair(key, value));++_cur;
         _dict[key] = _list.begin();
-        if(_list.size() > _size)
+        if(_cur > _size)
         {
             int key = _list.back().first;
-            _dict.erase(key);
+            _dict.erase(key);--_cur;
             _list.pop_back();
         }
     }
@@ -41,6 +41,7 @@ private:
     unordered_map<int, list<pair<int, int> >::iterator >_dict;
     list<pair<int, int> > _list;
     int _size;
+    int _cur;
 };
 
 int main()

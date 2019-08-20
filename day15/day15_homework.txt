@@ -1,0 +1,49 @@
+
+
+1. 算法库中有哪些类型的操作？什么是函数对象？
+
+2. 容器、迭代器、算法之间的关系是怎样的？他们是如何结合在一起的？
+
+3. 什么是迭代器失效问题？该问题是如何产生的？怎样避免产生迭代器失效问题？
+   
+4. 什么是回调函数，注册回调函数，执行回调函数？(掌握std::bind用法,非常重要)
+   > std::bind的实现原理阅读材料
+   		> http://www.cnblogs.com/xusd-null/p/3698969.html
+   
+   		> https://www.tuicool.com/articles/iMZ7ba
+
+   > function + bind的救赎 
+        > https://blog.csdn.net/myan/article/details/5928531
+
+5. 了解std::allocator的用法之后,实现自定义的Vector类
+
+接口形式：
+    template<typename T>
+    class Vector
+    {
+    public:
+        Vector();
+        ~Vector();
+        
+        void push_back(const T &); 
+        void pop_back();    
+        
+        int size();
+        int capacity();
+    private:
+        void reallocate();//重新分配内存,动态扩容要用的
+    private:    
+        static std::allocator<T> _alloc;
+        
+        T * _start;      //指向数组中的第一个元素
+        T * _finish; //指向最后一个实际元素之后的那个元素
+        T * _end_of_storage;        //指向数组本身之后的位置
+    };
+    
+    Vector模型
+     ______________________________
+    |_|_|_|_|_|____________________|
+     ↑         ↑                    ↑
+   _start   _finish            _end_of_storage
+
+6. 结合STL源码阅读《STL源码剖析》第二章内容理解std::allocator的实现

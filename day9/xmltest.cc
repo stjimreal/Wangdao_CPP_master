@@ -115,7 +115,7 @@ void NullLineEndings( char* p )
 int example_1()
 {
 	XMLDocument doc;
-	doc.LoadFile( "resources/coolshell.xml" );
+	doc.LoadFile( "resources/dream.xml" );
 
 	return doc.ErrorID();
 }
@@ -180,7 +180,7 @@ int example_3()
 	pointers when walking an XML tree, or use
 	XMLHandle.
 
-	(The XML is an excerpt from "coolshell.xml").
+	(The XML is an excerpt from "dream.xml").
 
 	@skip example_3()
 	@until </PLAY>";
@@ -331,11 +331,11 @@ int main( int argc, const char ** argv )
 		exit(0);
 	}
 
-	FILE* fp = fopen( "resources/coolshell.xml", "r" );
+	FILE* fp = fopen( "resources/dream.xml", "r" );
 	if ( !fp ) {
-		printf( "Error opening test file 'coolshell.xml'.\n"
+		printf( "Error opening test file 'dream.xml'.\n"
 				"Is your working directory the same as where \n"
-				"the xmltest.cpp and coolshell.xml file are?\n\n"
+				"the xmltest.cpp and dream.xml file are?\n\n"
 	#if defined( _MSC_VER )
 				"In windows Visual Studio you may need to set\n"
 				"Properties->Debugging->Working Directory to '..'\n"
@@ -533,8 +533,8 @@ int main( int argc, const char ** argv )
 		// XML2 :   469,073	bytes	in    323 allocations
 		//int newStart = gNew;
 		XMLDocument doc;
-		doc.LoadFile( "resources/coolshell.xml" );
-		XMLTest( "Load coolshell.xml", false, doc.Error() );
+		doc.LoadFile( "resources/dream.xml" );
+		XMLTest( "Load dream.xml", false, doc.Error() );
 
 		doc.SaveFile( "resources/out/dreamout.xml" );
 		XMLTest( "Save dreamout.xml", false, doc.Error() );
@@ -1601,8 +1601,8 @@ int main( int argc, const char ** argv )
         XMLTest( "Document is initially empty", true, doc.NoChildren() );
         doc.Clear();
         XMLTest( "Empty is empty after Clear()", true, doc.NoChildren() );
-        doc.LoadFile( "resources/coolshell.xml" );
-        XMLTest( "Load coolshell.xml", false, doc.Error() );
+        doc.LoadFile( "resources/dream.xml" );
+        XMLTest( "Load dream.xml", false, doc.Error() );
         XMLTest( "Document has something to Clear()", false, doc.NoChildren() );
         doc.Clear();
         XMLTest( "Document Clear()'s", true, doc.NoChildren() );
@@ -1940,7 +1940,7 @@ int main( int argc, const char ** argv )
 		doc.LoadFile( "resources/no-such-file.xml" );
 		XMLTest( "No such file - should fail", true, doc.Error() );
 
-		doc.LoadFile( "resources/coolshell.xml" );
+		doc.LoadFile( "resources/dream.xml" );
 		XMLTest( "Error should be cleared", false, doc.Error() );
 	}
 
@@ -2285,8 +2285,8 @@ int main( int argc, const char ** argv )
 		QueryPerformanceFrequency((LARGE_INTEGER*)&freq);
 #endif
 
-		FILE* perfFP = fopen("resources/coolshell.xml", "r");
-		XMLTest("Open coolshell.xml", true, perfFP != 0);
+		FILE* perfFP = fopen("resources/dream.xml", "r");
+		XMLTest("Open dream.xml", true, perfFP != 0);
 		fseek(perfFP, 0, SEEK_END);
 		long size = ftell(perfFP);
 		fseek(perfFP, 0, SEEK_SET);
@@ -2294,7 +2294,7 @@ int main( int argc, const char ** argv )
 		char* mem = new char[size + 1];
 		memset(mem, 0xfe, size);
 		size_t bytesRead = fread(mem, 1, size, perfFP);
-		XMLTest("Read coolshell.xml", true, uint32_t(size) >= uint32_t(bytesRead));
+		XMLTest("Read dream.xml", true, uint32_t(size) >= uint32_t(bytesRead));
 		fclose(perfFP);
 		mem[size] = 0;
 
@@ -2315,7 +2315,7 @@ int main( int argc, const char ** argv )
 #else
 		clock_t cend = clock();
 #endif
-		XMLTest( "Parse coolshell.xml", false, parseDreamXmlFailed );
+		XMLTest( "Parse dream.xml", false, parseDreamXmlFailed );
 
 		delete[] mem;
 
@@ -2331,7 +2331,7 @@ int main( int argc, const char ** argv )
 #else
 		const double duration = (double)(cend - cstart) / (double)COUNT;
 #endif
-		printf("\nParsing coolshell.xml (%s): %.3f milli-seconds\n", note, duration);
+		printf("\nParsing dream.xml (%s): %.3f milli-seconds\n", note, duration);
 	}
 
 #if defined( _MSC_VER ) &&  defined( TINYXML2_DEBUG )

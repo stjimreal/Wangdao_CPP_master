@@ -1,4 +1,4 @@
-# C++ day15
+# C++ day15_刘立京
 
 ## 1. 算法库中有哪些类型的操作？什么是函数对象
 
@@ -15,7 +15,7 @@
 ![1](6.png)
 + 已排序区间算法（sorted-range algorithm）  
 ![1](7.png)
-+ 数值算法（numeric algorithm）  
++ 数值算法（numeric algorithm）包含在`<numeric>`头文件中  
 ![1](8.png)
 
 > [图片来源](https://www.cnblogs.com/larry-xia/p/9497340.html)
@@ -239,12 +239,20 @@ int main()
 1. `destroy`：直接显式调用每个元素的`析构函数`  
 2. `construct` ====》 调用**placement new**函数进行构造  
 
+应该使用`placement new`原型：  
+
+![picture](./12.png)
+
 ```cpp
 void *operator new( size_t, void *p ) throw()     { return p; }
 {
     new(size_t size) Tp(args...);
 }
 ```
+
+其他的`new`操作符原型：  
+
+![picture](./13.png)
 
 3. `template <class Tp> std::allocator<Tp> allocate(size_t)`仅进行大小为`Tp * size`的内存分配并返回内存位置，并不对每格空间进行对象初始化  
 4. `deallocate(iterator, size_t)`回收指针所指的大小为`size`的内存，并且不执行目标内存对应对象的析构函数  

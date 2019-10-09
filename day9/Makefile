@@ -4,7 +4,7 @@ ELFS:= xml
 CFLAGS:= -Wall
 CXX:= g++
 $(ELFS):$(OBJS)
-	$(CXX) $(CFLAGS) $^ -o $@ -llog4cpp -lpthread -ltinyxml2
+	$(CXX) $(CFLAGS) $^ -o $@ -llog4cpp -lpthread
 ./bin/%.o:./src/%.cc
 	$(CXX) $(CFLAGS) -c $< -o $@
 

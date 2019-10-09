@@ -18,9 +18,11 @@
 
 ### 2. 通过阅读迭代器源码的方式来理解迭代器，如
 
+> RandomAccess_iterator  
+> bidirectional_iterator  
+> forward_iterator  
 > ostream_iterator  
 > istream_iterator  
-> back_insert_iterator
 
 ### 3. 什么是适配器模式？STL中有哪些适配器
 
